@@ -22,7 +22,6 @@ rtm.on('slack_event', async (eventType, event) => {
     }
 })
 
-
 function hello (channelId, userId) {
     sendMessage(channelId, `Heya! <@${userId}>`)
 }
