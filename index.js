@@ -11,7 +11,7 @@ const app = new App({
 (async () => {
   const port = 3000
   await app.start(process.env.PORT || port);
-  console.log('Bolt app started!!');
+  console.log('Salah Bot Started!');
 })();
 
 app.message(/salah/, async ({ command, say }) => {
