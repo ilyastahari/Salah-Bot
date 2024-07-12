@@ -73,7 +73,7 @@ app.message("!salah", async ({ message, say }) => {
             const responseListener = async ({ message: responseMessage }) => {
               if (responseMessage.user === userId && ['Y', 'N'].includes(responseMessage.text.toUpperCase())) {
                 if (responseMessage.text.toUpperCase() === 'Y') {
-                  let salahTimesText = `salah times for ${city} today:\n`;
+                  let salahTimesText = `Salah times for ${city} today:\n`;
                   const specificsalahs = ['Fajr', 'Dhuhr', 'Asr', 'Maghrib', 'Isha'];
                   for (const salah of specificsalahs) {
                     if (data[salah]) {
