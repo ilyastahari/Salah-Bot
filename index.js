@@ -64,7 +64,7 @@ app.message(async ({ message, say }) => {
         await say(`Next salah time for ${city} is:\n${nextSalah}`);
         await say("Would you like to see the list of the salah times for today? (Y/N)");
 
-        activeRequests[userId] = { awaitingConfirmation: true };
+        activeRequests[userId] = { awaitingConfirmation: true, city };
 
         activeRequests[userId].timeout = setTimeout(async () => {
           if (activeRequests[userId]?.awaitingConfirmation) {
@@ -86,7 +86,7 @@ app.message(async ({ message, say }) => {
 
     if (['Y', 'N'].includes(text.toUpperCase())) {
       if (text.toUpperCase() === 'Y') {
-        const city = text;
+        const city = activeRequests[userId].city;
         const country = 'US';
         const date = new Date();
         const day = String(date.getDate()).padStart(2, '0');
